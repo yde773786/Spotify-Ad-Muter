@@ -10,7 +10,10 @@ def main():
     auth_manager = SpotifyOAuth(scope=scope, username=username)
     sp = spotipy.Spotify(auth_manager=auth_manager)
 
-    print(sp.currently_playing()['currently_playing_type'])
+    try:
+        print(sp.currently_playing()['currently_playing_type'])
+    except TypeError:
+        pass
 
 
 if __name__ == '__main__':
