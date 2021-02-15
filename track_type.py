@@ -3,7 +3,7 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
 
-def main():
+def main() -> None:
     username = sys.argv[1]
     scope = "user-read-currently-playing"
 

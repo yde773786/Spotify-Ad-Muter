@@ -26,9 +26,16 @@ fi
 while [ -n "$(pidof spotify)"  ]
 do
   current=$(python3 track_type.py "$SPOTIPY_USERNAME")
-  echo $current
 
   pacmd list-sink-inputs > temp
   pid=$(python3 spotify_pid.py)
+
+  if [[ "$current" = "ad" ]]
+  then
+    pacmd set-sink-input-mute $pid true
+  else
+    pacmd set-sink-input-mute $pid false
+  fi
+
   sleep 1
 done
