@@ -23,4 +23,12 @@ then
   echo export SPOTIPY_REDIRECT_URI=\"$localhst\" >> ~/.bashrc
 fi
 
-python3 main.py "$SPOTIPY_USERNAME"
+while [ -n "$(pidof spotify)"  ]
+do
+  current=$(python3 track_type.py "$SPOTIPY_USERNAME")
+  echo $current
+
+  pacmd list-sink-inputs > temp
+  pid=$(python3 spotify_pid.py)
+  sleep 1
+done
