@@ -33,12 +33,12 @@ Execute script with:
 ./container.sh
 ```
 
-The requirement of Spotify Client ID and Secret would in effect
+The requirement of Spotify Client ID and Secret would 
 require the user to register for spotify developers and 'create an
-app'. This is easy and possible, but is nevertheless unreasonable
-for a normal client. Thus, using this small script as a template and hosting a 
-web server for the task could be this project's best possible use.
+app'. Thus, the user would be the end user as well as the client for the 
+OAuth2.0 authentiation. This is mildly inconvinient but negates the latency of
+having a server in the middle.
 
 Additionally, the scripts do not stop spotify from playing its advertisements,
-but in-effect simply automate the muting of the ads, which can be done
+but simply automates the muting of the ads, which can be done
 manually as well. Thus, it should abide by Spotify's terms and conditions.
